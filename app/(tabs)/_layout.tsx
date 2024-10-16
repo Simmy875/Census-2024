@@ -14,6 +14,7 @@ export default function TabLayout() {
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
       }}>
+        
       <Tabs.Screen
         name="index"
         options={{
@@ -23,12 +24,40 @@ export default function TabLayout() {
           ),
         }}
       />
+        <Tabs.Screen
+        name="Auth"
+        options={{
+          title: 'Login',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'key' : 'key-outline'} color={color} />
+          ),
+        }}
+      />
+
       <Tabs.Screen
+        name="Dashboard"
+        options={{
+          title: 'Info',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'checkbox' : 'checkbox\-outline'} color={color} />
+          ),
+        }}
+      />
+       <Tabs.Screen
+        name="logout"
+        options={{
+          title: 'Log Out',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'log-out' : 'log-out-outline'} color={color} />
+          ),
+        }}
+      />
+        <Tabs.Screen
         name="explore"
         options={{
           title: 'Explore',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <TabBarIcon name={focused ? 'map' : 'map-outline'} color={color} />
           ),
         }}
       />
